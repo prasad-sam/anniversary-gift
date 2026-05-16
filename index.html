@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Anniversary ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            padding-top: 100px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius: 20px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 24px;
+        }
+
+        .heart {
+            font-size: 60px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            color: #ff4b5c;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #ffe6ea;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="heart">❤️</div>
+
+        <h1>Happy Anniversary My Love</h1>
+
+        <p>
+            Every moment with you is special.<br>
+            Thank you for filling my life with love, happiness, and endless memories.
+        </p>
+
+        <p>
+            I love you forever 💕
+        </p>
+
+        <button onclick="showMessage()">Click Me</button>
+    </div>
+
+    <script>
+        function showMessage() {
+            alert("You are the best gift in my life ❤️");
+        }
+    </script>
+
+</body>
+</html>
