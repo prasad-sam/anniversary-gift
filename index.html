@@ -1,4 +1,3 @@
-```html id="2h8mqp"
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,9 +21,9 @@
             padding: 40px;
             border-radius: 20px;
             width: 80%;
-            max-width: 800px;
+            max-width: 850px;
             margin: 40px auto;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
@@ -66,20 +65,25 @@
             position: relative;
             width: 100%;
             max-width: 700px;
+            height: 500px;
             margin: 30px auto;
             border-radius: 20px;
             overflow: hidden;
+            background: rgba(0, 0, 0, 0.2);
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         }
 
         .slide {
             display: none;
+            width: 100%;
+            height: 100%;
         }
 
         .slide img {
             width: 100%;
-            height: 450px;
-            object-fit: cover;
+            height: 100%;
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.2);
         }
 
         .fade {
@@ -88,11 +92,11 @@
 
         @keyframes fade {
             from {
-                opacity: .4
+                opacity: .4;
             }
 
             to {
-                opacity: 1
+                opacity: 1;
             }
         }
 
@@ -105,10 +109,12 @@
             color: #ff4b5c;
             cursor: pointer;
             margin-top: 20px;
+            transition: 0.3s;
         }
 
         button:hover {
             background: #ffe6ea;
+            transform: scale(1.05);
         }
 
         .floating-heart {
@@ -118,6 +124,7 @@
             animation: floatUp 6s linear infinite;
             font-size: 25px;
             opacity: 0.8;
+            pointer-events: none;
         }
 
         @keyframes floatUp {
@@ -139,6 +146,7 @@
         }
 
         @media (max-width: 768px) {
+
             h1 {
                 font-size: 35px;
             }
@@ -151,8 +159,8 @@
                 font-size: 18px;
             }
 
-            .slide img {
-                height: 300px;
+            .slideshow-container {
+                height: 320px;
             }
         }
     </style>
@@ -169,37 +177,33 @@
         <h2>Haveela ❤️</h2>
 
         <div class="slideshow-container">
+
             <div class="slide fade">
-                <img src="images/DSC08104.JPG"
-                    alt="Love Image">
-            </div>
-            <div class="slide fade">
-                <img src="images/IMG-WA0035.jpeg"
-                    alt="Love Image">
+                <img src="images/DSC08104.JPG" alt="Love Image">
             </div>
 
             <div class="slide fade">
-                <img src="images/IMG-20260405-WA0033.jpg"
-                    alt="Love Image">
-            </div>
-            <div class="slide fade">
-                <img src="images/IMG_7067.JPG"
-                    alt="Love Image">
-            </div>
-            
-
-            <div class="slide fade">
-                <img src="images/IMG-20260405-WA0034.jpg"
-                    alt="Couple Image">
-            </div>
-            <div class="slide fade">
-                <img src="images/IMG_7136.JPG"
-                    alt="Love Image">
+                <img src="images/IMG-WA0035.jpeg" alt="Love Image">
             </div>
 
             <div class="slide fade">
-                <img src="images/IMG-20260405-WA0003.jpg"
-                    alt="Anniversary Image">
+                <img src="images/IMG-20260405-WA0033.jpg" alt="Love Image">
+            </div>
+
+            <div class="slide fade">
+                <img src="images/IMG_7067.JPG" alt="Love Image">
+            </div>
+
+            <div class="slide fade">
+                <img src="images/IMG-20260405-WA0034.jpg" alt="Couple Image">
+            </div>
+
+            <div class="slide fade">
+                <img src="images/IMG_7136.JPG" alt="Love Image">
+            </div>
+
+            <div class="slide fade">
+                <img src="images/IMG-20260405-WA0003.jpg" alt="Anniversary Image">
             </div>
 
         </div>
@@ -217,7 +221,8 @@
 
     </div>
 
-    <audio autoplay loop>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
         <source src="images/music-263144.mp3" type="audio/mp3">
     </audio>
 
@@ -227,6 +232,7 @@
             alert("Haveela ❤️\n\nThis is my aniversary gift 💕");
         }
 
+        // Slideshow
         let slideIndex = 0;
         showSlides();
 
@@ -249,6 +255,7 @@
             setTimeout(showSlides, 3000);
         }
 
+        // Floating hearts
         function createHeart() {
 
             const heart = document.createElement("div");
@@ -270,9 +277,17 @@
 
         setInterval(createHeart, 300);
 
+        // Play music after first click
+        document.body.addEventListener("click", function () {
+
+            let music = document.getElementById("bgMusic");
+
+            music.play();
+
+        }, { once: true });
+
     </script>
 
 </body>
 
 </html>
-```
